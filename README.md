@@ -20,4 +20,10 @@
 
 ## Overview
 
-Creates presentation
+Illustrative Use Case: Enterprise Customer with private Supervisely Instance would like to share project with labeling provider that also has his own private Supervisely Instance. This app is useful especially when projects are huge (in gigabytes).
+
+## How To Use
+
+1. Create new team on `source` instance. Copy project to this team.
+2. Create and invite user to this team. This new User has access only to projects in special team, all data in other teams is private.
+3. Share `project_id` and user's `api_token` with your labeling provider.
