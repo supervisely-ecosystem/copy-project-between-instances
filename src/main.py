@@ -4,9 +4,15 @@ import supervisely_lib as sly
 TEAM_ID = int(os.environ['context.teamId'])
 WORKSPACE_ID = int(os.environ['context.workspaceId'])
 
-my_app = sly.AppService()
+SERVER_ADDRESS2 = os.environ["modal.state.serverAddress"]
+if SERVER_ADDRESS2 == "":
+    raise ValueError("Remote server address is not defined")
+API_TOKEN2 = os.environ["modal.state.apiToken"]
+if API_TOKEN2 == "":
+    raise ValueError("Remote API token is not defined")
 
-api2 = sly.Api(os.environ["SERVER_ADDRESS2"], os.environ["API_TOKEN2"])
+my_app = sly.AppService()
+api2 = sly.Api(SERVER_ADDRESS2, API_TOKEN2)
 PROJECT_ID2 = int(os.environ['modal.state.projectId'])
 
 
