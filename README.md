@@ -20,7 +20,7 @@
 
 ## Overview
 
-Illustrative Use Case: Enterprise Customer with private Supervisely Instance would like to share project with labeling provider that also has his own private Supervisely Instance. This app is useful especially when projects are huge (in gigabytes).
+Illustrative Use Case: Enterprise Customer with private Supervisely Instance would like to share project with labeling provider that also has his own private Supervisely Instance. This app is useful especially when projects are huge (several gigabytes +).
 
 ## How To Use
 
