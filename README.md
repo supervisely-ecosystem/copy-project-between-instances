@@ -24,6 +24,8 @@ Illustrative Use Case: Enterprise Customer with private Supervisely Instance wou
 
 ## How To Use
 
-1. Create new team on `source` instance. Copy project to this team.
+1. Create new team on `source` instance. Copy project to this team. Let's call this project: `project_to_share`.
 2. Create and invite user to this team. This new User has access only to projects in special team, all data in other teams is private.
-3. Share `project_id` and user's `api_token` with your labeling provider.
+3. Share `id` of `project_to_share` and user's `api_token` with your labeling provider.
+4. Lebeling provider has to run app and in modal window define `SERVER_ADDRESS`, `id` of project that should be copied and `API_TOKEN`. 
+5. Project (images/annotations/images metadata) is copied to current team/workspace with the same name.  
