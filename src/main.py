@@ -16,16 +16,20 @@ def copy_project(api: sly.Api, task_id, context, state, app_logger):
     project2 = api2.project.get_info_by_id(PROJECT_ID2)
     if project2 is None:
         raise RuntimeError(f"Project with id={PROJECT_ID2} not found on remote Supervisely instance")
-    meta2 = sly.ProjectMeta(api2.project.get_meta(project2.id))
+    if project2.type != str(sly.ProjectType.IMAGES):
+        raise TypeError("This version supports only images project. Please, submit a feature request to Supervisely dev"
+                        "team to add support of other types of projects (videos, 3d, dicom, ...)")
+
+    meta2_json = api2.project.get_meta(project2.id)
 
     project = api.project.create(WORKSPACE_ID,
                                  project2.name,
                                  project2.type,
                                  project2.description,
                                  change_name_if_conflict=True)
-    api.project.update_meta(project.id, meta2)
+    api.project.update_meta(project.id, meta2_json)
 
-    progress = sly.Progress("Import", project2.items_count)
+    progress = sly.Progress("Import", api2.project.get_images_count(project2.id))
     for dataset2 in api2.dataset.get_list(project2.id):
         dataset = api.dataset.create(project.id, dataset2.name, dataset2.description)
         images2 = api2.image.get_list(dataset2.id)
@@ -47,7 +51,11 @@ def copy_project(api: sly.Api, task_id, context, state, app_logger):
             batch = api.image.upload_paths(dataset.id, names, paths, metas=metas)
             ids = [image_info.id for image_info in batch]
             api.annotation.upload_jsons(ids, anns2)
-        progress.iters_done_report(len(batch2))
+
+            for p in paths:
+                sly.fs.silent_remove(p)
+
+            progress.iters_done_report(len(batch2))
 
     api.task.set_output_project(task_id, project.id, project.name)
     my_app.stop()
@@ -57,7 +65,6 @@ def main():
     sly.logger.info("Script arguments", extra={
         "TEAM_ID": TEAM_ID,
         "WORKSPACE_ID": WORKSPACE_ID,
-        "SERVER_ADDRESS2": SERVER_ADDRESS2,
         "PROJECT_ID2": PROJECT_ID2
     })
     my_app.run(initial_events=[{"command": "copy_project"}])
