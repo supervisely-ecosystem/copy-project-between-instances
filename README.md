@@ -33,4 +33,4 @@ Illustrative Use Case: Enterprise Customer with private Supervisely Instance wou
 
 5. Project (images/annotations/images metadata) is copied to current team/workspace with the same name.  
 
-
+<img src="https://i.imgur.com/bBqPCZh.png"/>
