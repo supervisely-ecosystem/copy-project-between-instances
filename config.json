@@ -17,5 +17,6 @@
   "isolate": true,
   "headless": true,
   "icon": "https://img.icons8.com/color/96/000000/networking-manager.png",
-  "icon_background": "#FFFFFF"
+  "icon_background": "#FFFFFF",
+  "poster": "https://i.imgur.com/xmuBeht.png"
 }
