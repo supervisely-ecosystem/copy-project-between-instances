@@ -2,7 +2,8 @@
   "name": "Copy project between instances",
   "type": "app",
   "categories": [
-    "import"
+    "import",
+    "images"
   ],
   "description": "Copies images + annotations + images metadata",
   "docker_image": "supervisely/base-py-sdk:6",
