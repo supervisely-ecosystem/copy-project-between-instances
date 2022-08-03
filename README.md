@@ -1,5 +1,5 @@
 <div align="center" markdown>
-<img src="https://i.imgur.com/xmuBeht.png"/>
+<img src="https://user-images.githubusercontent.com/48245050/182578921-e47cdecb-5726-424d-a1c9-b06dbf692b1f.png"/>
 
 # Copy Project Between Supervisely Instances
 
