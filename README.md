@@ -28,8 +28,8 @@ Illustrative Use Case: Enterprise Customer with private Supervisely Instance wou
 3. Share `id` of `project_to_share` and user's `api_token` with your labeling provider.
 4. Labeling provider has to run app and in modal window define `SERVER_ADDRESS`, `id` of project that should be copied and `API_TOKEN`.
 
-<img src="https://i.imgur.com/7hdsoSU.png" width="450px"/>
+<img src="media/modal.png" width="450px"/>
 
 5. Project (images/annotations/images metadata) is copied to current team/workspace with the same name.  
 
-<img src="https://i.imgur.com/bBqPCZh.png"/>
+<img src="media/task.png"/>
