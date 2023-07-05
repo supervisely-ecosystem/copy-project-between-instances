@@ -17,7 +17,7 @@
   "task_location": "workspace_tasks",
   "isolate": true,
   "headless": true,
-  "icon": "https://img.icons8.com/color/96/000000/networking-manager.png",
+  "icon": "media/icon.png",
   "icon_background": "#FFFFFF",
   "poster": "https://user-images.githubusercontent.com/48245050/182578921-e47cdecb-5726-424d-a1c9-b06dbf692b1f.png"
 }
