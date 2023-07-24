@@ -1,23 +1,23 @@
 {
-  "name": "Copy project between instances",
-  "type": "app",
-  "categories": [
-    "import",
-    "images"
-  ],
-  "description": "Copies images + annotations + images metadata",
-  "docker_image": "supervisely/base-py-sdk:6.72.70",
-  "main_script": "src/main.py",
-  "modal_template": "src/modal.html",
-  "modal_template_state": {
-    "serverAddress": "",
-    "apiToken": "",
-    "projectId": ""
-  },
-  "task_location": "workspace_tasks",
-  "isolate": true,
-  "headless": true,
-  "icon": "https://img.icons8.com/color/96/000000/networking-manager.png",
-  "icon_background": "#FFFFFF",
-  "poster": "https://user-images.githubusercontent.com/48245050/182578921-e47cdecb-5726-424d-a1c9-b06dbf692b1f.png"
+    "name": "Copy project between instances",
+    "type": "app",
+    "categories": [
+        "import",
+        "images"
+    ],
+    "description": "Copies images + annotations + images metadata",
+    "docker_image": "supervisely/base-py-sdk:6.72.78",
+    "main_script": "src/main.py",
+    "modal_template": "src/modal.html",
+    "modal_template_state": {
+        "serverAddress": "",
+        "apiToken": "",
+        "projectId": ""
+    },
+    "task_location": "workspace_tasks",
+    "isolate": true,
+    "headless": true,
+    "icon": "https://img.icons8.com/color/96/000000/networking-manager.png",
+    "icon_background": "#FFFFFF",
+    "poster": "https://user-images.githubusercontent.com/48245050/182578921-e47cdecb-5726-424d-a1c9-b06dbf692b1f.png"
 }
