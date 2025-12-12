@@ -3,3 +3,5 @@
 *.mp4
 venv
 supervisely_lib
+__pycache__
+*.pyc
