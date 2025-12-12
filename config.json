@@ -3,9 +3,10 @@
   "type": "app",
   "categories": [
     "import",
-    "images"
+    "images",
+    "videos"
   ],
-  "description": "Copies images + annotations + images metadata",
+  "description": "Copies images/videos + annotations + metadata between instances",
   "docker_image": "supervisely/import-export:6.73.162",
   "main_script": "src/main.py",
   "modal_template": "src/modal.html",

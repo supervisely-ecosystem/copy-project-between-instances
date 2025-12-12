@@ -21,6 +21,15 @@
 
 Illustrative Use Case: Enterprise Customer with private Supervisely Instance would like to share project with labeling provider that also has his own private Supervisely Instance. This app is useful especially when projects are huge (several gigabytes +).
 
+**Supported project types:**
+- Images projects
+- Videos projects (including videos uploaded by link)
+
+**Features:**
+- Copies all project data (images/videos, annotations, and metadata)
+- For video projects, preserves link-based uploads (videos uploaded via URL are re-uploaded as links, not downloaded)
+- Maintains project structure and all annotations
+
 ## How To Use
 
 1. Create new team on `source` instance. Copy project to this team. Let's call this project: `project_to_share`.
@@ -30,6 +39,6 @@ Illustrative Use Case: Enterprise Customer with private Supervisely Instance wou
 
 <img src="https://i.imgur.com/7hdsoSU.png" width="450px"/>
 
-5. Project (images/annotations/images metadata) is copied to current team/workspace with the same name.  
+5. Project (images/videos, annotations, and metadata) is copied to current team/workspace with the same name.  
 
 <img src="https://i.imgur.com/bBqPCZh.png"/>
