@@ -75,13 +75,11 @@ def copy_videos_project(api, api2, project, project2, progress):
                 links = []
                 names = []
                 metas = []
-                video_ids2 = []
                 
                 for video_info2 in linked_videos:
                     links.append(video_info2.link)
                     names.append(video_info2.name)
                     metas.append(video_info2.meta)
-                    video_ids2.append(video_info2.id)
                 
                 # Upload linked videos
                 uploaded_videos = api.video.upload_links(dataset.id, links, names, metas=metas)
@@ -115,9 +113,8 @@ def copy_videos_project(api, api2, project, project2, progress):
                 uploaded_videos = api.video.upload_paths(dataset.id, names, paths, metas=metas)
                 
                 # Download and upload annotations
-                for video_info2, uploaded_video, ann_path in zip(regular_videos, uploaded_videos, 
-                                                                  [os.path.join(my_app.data_dir, f"{v.name}.json") 
-                                                                   for v in regular_videos]):
+                ann_paths = [os.path.join(my_app.data_dir, f"{v.name}.json") for v in regular_videos]
+                for video_info2, uploaded_video, ann_path in zip(regular_videos, uploaded_videos, ann_paths):
                     ann2 = api2.video.annotation.download(video_info2.id)
                     sly.json.dump_json_file(ann2, ann_path)
                     api.video.annotation.upload_paths([uploaded_video.id], [ann_path], meta2)
