@@ -1,5 +1,5 @@
 import os
-import supervisely_lib as sly
+import supervisely as sly
 
 TEAM_ID = int(os.environ['context.teamId'])
 WORKSPACE_ID = int(os.environ['context.workspaceId'])
